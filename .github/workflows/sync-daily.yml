@@ -1,0 +1,70 @@
+name: Daily sync (scrape + translate)
+
+on:
+  schedule:
+    # 매일 한국 시간 08:00 (UTC 23:00). GitHub Actions cron은 UTC 기준.
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: '이미 번역된 글도 다시 번역'
+        required: false
+        default: 'false'
+      limit:
+        description: '최근 N개만 (0 = 전체)'
+        required: false
+        default: '0'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+
+      - name: Scrape + Translate
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LLM_API_URL: ${{ secrets.LLM_API_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          SCRAPE_LIMIT: ${{ github.event.inputs.limit }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            node scripts/translate.js --force
+          else
+            node scripts/sync.js
+          fi
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Skip build artifacts
+          git add content/posts/*.md scripts/data/articles.json scripts/data/translated.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: daily sync $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No new content to commit"
+          fi
