@@ -1,7 +1,7 @@
 ﻿'use client';
 
 import { useEffect, useState } from 'react';
-import { HexScene } from './HexScene';
+import HexScene from './HexScene';
 
 export default function HomeWithLoader({ posts }) {
   const [showLoader, setShowLoader] = useState(true);
