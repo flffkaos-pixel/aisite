@@ -20,9 +20,9 @@ export default function HomeWithLoader({ posts }) {
       <h1>Korean AI News</h1>
       <div>
         {posts.map((post) => (
-          <div key={post.id} style={{ borderBottom: '1px solid #eee', padding: '16px 0' }}>
-            <h2>{post.frontmatter.title}</h2>
-            <p>{post.frontmatter.date}</p>
+          <div key={post.slug} style={{ borderBottom: '1px solid #eee', padding: '16px 0' }}>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.date}</p>
             <p>{post.content.slice(0, 200)}...</p>
           </div>
         ))}
