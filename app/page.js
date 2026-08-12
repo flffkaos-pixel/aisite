@@ -1,9 +1,9 @@
-'use client';
-
+﻿import { listPosts } from '../lib/posts';
 import dynamic from 'next/dynamic';
 
-const HexScene = dynamic(() => import('../components/HexScene'), { ssr: false });
+const HomeWithLoader = dynamic(() => import('../components/HomeWithLoader'), { ssr: false });
 
-export default function Home() {
-  return <HexScene />;
+export default function Page() {
+  const posts = listPosts();
+  return <HomeWithLoader posts={posts} />;
 }
