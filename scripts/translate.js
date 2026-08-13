@@ -98,18 +98,37 @@ async function callTranslate(text) {
     temperature: 0.2,
     max_tokens: 8192
   };
-  const res = await fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${API_KEY}`
-    },
-    body: JSON.stringify(body)
-  });
-  if (!res.ok) {
+  const MAX_RETRIES = 6;
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`
+      },
+      body: JSON.stringify(body)
+    });
+    if (res.ok) {
+      const data = await res.json();
+      const out = data?.choices?0]?.message?.content || '';
+      return out.trim();
+    }
     const t = await res.text();
-    throw new Error(`HTTP ${res.status}: ${t.slice(0, 500)}`);
+    // Retry on 429 (rate limit) / 5xx with backoff; fail fast on 4xx others.
+    const retriable = res.status === 429 || res.status >= 500;
+    if (!retriable) throw new Error(`HTTP ${res.status}: ${t.slice(0, 500)}`);
+    // Try to honor Retry-After / wait time from Groq error.
+    let waitSec = Math.min(60, 2 ** attempt);
+    try {
+      const j = JSON.parse(t);
+      const msg = (j?.error?.message || '').match(/try again in ([\d.]+)s/i);
+      if (msg) waitSec = Math.min(90, Math.max(waitSec, parseFloat(msg[1]) + 1));
+    } catch {}
+    process.stderr.write(`  rate limited (HTTP ${res.status}), retry in ${waitSec}s (attempt ${attempt}/${MAX_RETRIES})\n`);
+    await new Promise(r => setTimeout(r, waitSec * 1000));
   }
+  throw new Error(`translate failed after ${MAX_RETRIES} retries (rate limited)`);
+}
   const data = await res.json();
   const out = data?.choices?.[0]?.message?.content || '';
   return out.trim();
