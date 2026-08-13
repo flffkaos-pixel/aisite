@@ -1,9 +1,8 @@
 ﻿import { listPosts } from '../lib/posts';
-import dynamic from 'next/dynamic';
-
-const HomeWithLoader = dynamic(() => import('../components/HomeWithLoader.js'), { ssr: false });
+import HomeWithLoader from '../components/HomeWithLoader';
 
 export default function Page() {
   const posts = listPosts();
+  console.log('Page posts count:', posts.length);
   return <HomeWithLoader posts={posts} />;
 }

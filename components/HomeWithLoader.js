@@ -4,17 +4,16 @@ import { useEffect, useState } from 'react';
 import HexScene from './HexScene';
 
 export default function HomeWithLoader({ posts }) {
-  const [showLoader, setShowLoader] = useState(true);
+  // Show loader only if there are no posts (should not happen with current data)
+  const [showLoader, setShowLoader] = useState(!(posts && posts.length > 0));
 
+  // Optionally hide loader after a short delay to avoid flash if posts become available later
   useEffect(() => {
-    // Hide loader when posts are available or after a short delay
-    if (posts && posts.length > 0) {
-      setShowLoader(false);
-    } else {
-      const id = setTimeout(() => setShowLoader(false), 2500);
+    if (showLoader && posts && posts.length > 0) {
+      const id = setTimeout(() => setShowLoader(false), 100);
       return () => clearTimeout(id);
-    };
-  }, [posts]);
+    }
+  }, [showLoader, posts]);
 
   if (showLoader) {
     return <HexScene />;
