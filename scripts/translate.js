@@ -129,10 +129,6 @@ async function callTranslate(text) {
   }
   throw new Error(`translate failed after ${MAX_RETRIES} retries (rate limited)`);
 }
-  const data = await res.json();
-  const out = data?.choices?.[0]?.message?.content || '';
-  return out.trim();
-}
 
 function mdEscape(s) {
   return (s || '').replace(/"/g, '\\"').replace(/\r?\n/g, ' ');
