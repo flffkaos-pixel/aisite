@@ -100,9 +100,53 @@ function slugFromUrl(url) {
   return parts[parts.length - 1] || url;
 }
 
+// Remove ML_Bear Times newsletter/signup boilerplate and card-news blocks
+// before markdown conversion.
+function stripBoilerplate(html) {
+  let s = html || '';
+  // Ghost subscription form (in-article promo card)
+  s = s.replace(/<div[^>]*class="[^"]*subscription-form-container[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '\n');
+  s = s.replace(/<div[^>]*class="[^"]*signup-form-wrapper[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
+  s = s.replace(/<div[^>]*class="[^"]*gh-subscribe-wrapper[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
+  s = s.replace(/<section[^>]*class="[^"]*gh-subscribe[^"]*"[^>]*>[\s\S]*?<\/section>/gi, '');
+  // Ghost membership upgrade CTA
+  s = s.replace(/<div[^>]*class="[^"]*gh-post-upgrade-cta[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
+  // article meta line like "13 8月 2026"
+  s = s.replace(/<time[^>]*datetime="[^"]*"[^>]*>[\s\S]*?<\/time>/gi, '');
+  // article header (title/H1 + date) — only meaningful in single-page scrape
+  s = s.replace(/<header[^>]*class="[^"]*gh-article-header[^"]*"[^>]*>[\s\S]*?<\/header>/gi, '');
+  return s;
+}
+
+// Remove ML_Bear Times branding / promo sentences from the finished markdown.
+function cleanBranding(md) {
+  let t = md || '';
+  t = t.replace(/[（(]ほぼ[）)]毎日AIニュースが届きます。?ぜひご登録ください。?/g, '');
+  t = t.replace(/[（(]ほぼ[）)]毎日AIニュースが届きます/g, '');
+  t = t.replace(/ぜひご登録ください/g, '');
+  t = t.replace(/Subscribe to ML_Bear Times/gi, '');
+  t = t.replace(/ML_Bear Times ©?2026/gi, '');
+  t = t.replace(/ML_Bear Times/gi, '');
+  t = t.replace(/ML_Bear/gi, '');
+  return t;
+}
+
+// A "card news" post is image-card style: little real text compared to images.
+// Return true to skip such posts.
+function isCardNews(md) {
+  const text = (md || '')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')  // drop image markdown
+    .replace(/https?:\/\/\S+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const imgCount = ((md || '').match(/!\[[^\]]*\]\([^)]*\)/g) || []).length;
+  // few text characters + at least one embedded card => card-news
+  return imgCount > 0 && text.length < 400;
+}
+
 // Minimal HTML -> Markdown for Ghost posts.
 function htmlToMarkdown(html) {
-  let s = html || '';
+  let s = stripBoilerplate(html);
   // strip script/style/nav
   s = s.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<style[\s\S]*?<\/style>/g, '');
   s = s.replace(/<nav[\s\S]*?<\/nav>/g, '');
@@ -136,6 +180,7 @@ function htmlToMarkdown(html) {
   s = s.replace(/<[^>]+>/g, '');
   // entities
   s = decodeEntities(s);
+  s = cleanBranding(s);
   // collapse blank lines
   s = s.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n').trim();
   return s;
@@ -164,21 +209,30 @@ async function main() {
   const LIMIT = limitArg >= 0 ? parseInt(argv[limitArg + 1], 10) : 0;
 
   const known = fs.existsSync(DATA_FILE) ? JSON.parse(fs.readFileSync(DATA_FILE, 'utf8')) : {};
-  const out = { ...known };
+  // Retrofit branding cleaning onto previously-cached bodies.
+  const out = {};
+  for (const [slug, v] of Object.entries(known)) {
+    out[slug] = { ...v, body: v.body ? cleanBranding(v.body) : v.body };
+  }
 
   if (urlArg >= 0) {
     const u = argv[urlArg + 1];
     process.stderr.write(`[post] ${u}\n`);
     const p = await fetchSinglePost(u);
     const slug = slugFromUrl(u);
-    out[slug] = {
-      slug,
-      url: u,
-      title: p.title,
-      date: p.date,
-      image: p.image,
-      body: htmlToMarkdown(p.html)
-    };
+    const body = htmlToMarkdown(p.html);
+    if (isCardNews(body)) {
+      process.stderr.write(`  skip ${slug} (card-news, text only)\n`);
+    } else {
+      out[slug] = {
+        slug,
+        url: u,
+        title: p.title,
+        date: p.date,
+        image: p.image,
+        body
+      };
+    }
   } else {
     process.stderr.write(`[rss] ${RSS_URL}\n`);
     const xml = await fetchText(RSS_URL);
@@ -194,13 +248,18 @@ async function main() {
         continue;
       }
       process.stderr.write(`[${i}/${use.length}] ${slug}\n`);
+      const body = htmlToMarkdown(it.html);
+      if (isCardNews(body)) {
+        process.stderr.write(`  skip ${slug} (card-news, text only)\n`);
+        continue;
+      }
       out[slug] = {
         slug,
         url: it.url,
         title: decodeEntities(it.title),
         date: it.date,
         image: it.image,
-        body: htmlToMarkdown(it.html)
+        body
       };
     }
   }

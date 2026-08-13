@@ -7,15 +7,24 @@ const path = require('path');
 
 const DIR = path.resolve(__dirname, '..', 'content', 'posts');
 
-const CSS_RE = /signup-form-wrapper|content-mobile-text|content-desktop-text|q-fontsize|@media|line-height|box-shadow|<(style|script)/i;
-const SIGNUP_RE = /（ほぼ）毎日AIニュース|\(ほぼ\)毎日AIニュース|ぜひご登録ください/;
+const CSS_RE = /signup-form-wrapper|content-mobile-text|content-desktop-text|gh-subscribe|subscription-form|q-fontsize|@media|line-height|box-shadow|<(style|script)/i;
+const SIGNUP_RE = /（ほぼ）毎日AIニュース|\(ほぼ\)毎日AIニュース|ぜひご登録ください|Subscribe to ML_Bear Times/i;
+const BRAND_RE = /ML_Bear Times|ML_Bear/gi;
+
+function cleanLine(line) {
+  if (CSS_RE.test(line)) return null;
+  if (SIGNUP_RE.test(line)) return null;
+  if (/>\s*Subscribe to ML_Bear/i.test(line)) return null;
+  return line.replace(BRAND_RE, '').trimEnd();
+}
 
 function cleanBody(body) {
   const out = [];
   for (const line of body.split('\n')) {
-    if (CSS_RE.test(line)) continue;
-    if (SIGNUP_RE.test(line)) continue;
-    out.push(line);
+    const c = cleanLine(line);
+    if (c === null) continue;
+    if (!c.trim()) continue;
+    out.push(c);
   }
   // normalize: collapse 3+ blank lines into 1, trim leading/trailing blanks
   let text = out.join('\n');

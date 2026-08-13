@@ -56,7 +56,8 @@ const SYSTEM_PROMPT = `당신은 IT/AI 분야의 전문적인 일본어->한국�
 4. AI/IT 용어는 한국어 산업 표준 표현 사용.
 5. 트위터/X 인용문 뒤 "(번역)" 표기도 한국어로 "(번역)"으로 유지.
 6. 부자연스러운 기계번역 톤을 피하고, 자연스러운 한국어 문장으로 다듬되 의미를 왜곡하지 않는다.
-7. 출력은 번역된 Markdown 본문만. 설명, 주석, 사족 금지.`;
+7. 출력은 번역된 Markdown 본문만. 설명, 주석, 사족 금지.
+8. 원문에 뉴스레터/구독/브랜드(ML_Bear Times 등) 광고성 문구가 있다면 해당 문구는 번역하지 말고 생략한다.`;
 
 async function translate(text) {
   // Chunk overlong text (≈ Gemini-2.0-flash input 1M tokens but output is 8K, so guard by length).
