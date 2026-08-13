@@ -1,31 +1,30 @@
-# ML_Bear Times 한국어판
 
-[ml-bear-times.com](https://www.ml-bear-times.com/)의 AI 뉴스를 매일 자동으로 스크랩해 한국어로 번역하여 서비스하는 사이트입니다.
+[ml-bear-times.com](https://www.ml-bear-times.com/)??AI ?�스�?매일 ?�동?�로 ?�크?�해 ?�국?�로 번역?�여 ?�비?�하???�이?�입?�다.
 
 ## 구조
 
-- `app/` — Next.js 14 App Router (홈/아카이브/포스트)
-- `content/posts/` — 번역된 Markdown 포스트 (frontmatter + 본문)
-- `scripts/scrape.js` — 대상 사이트에서 글 URL/메타 추출
-- `scripts/translate.js` — Markdown을 LLM API로 일본어→한국어 번역
-- `scripts/sync.js` — 스크랩 + 번역 통합 실행
-- `.github/workflows/sync-daily.yml` — 매일 자정(KST) 실행
+- `app/` ??Next.js 14 App Router (???�카?�브/?�스??
+- `content/posts/` ??번역??Markdown ?�스??(frontmatter + 본문)
+- `scripts/scrape.js` ???�???�이?�에??글 URL/메�? 추출
+- `scripts/translate.js` ??Markdown??LLM API�??�본?�→?�국??번역
+- `scripts/sync.js` ???�크??+ 번역 ?�합 ?�행
+- `.github/workflows/sync-daily.yml` ??매일 ?�정(KST) ?�행
 
-## 로컬 실행
+## 로컬 ?�행
 
 ```bash
 npm install
 npm run dev
 ```
 
-## 수동 동기화
+## ?�동 ?�기??
 
 ```bash
-node scripts/sync.js   # 모드: since-last (최근 미번역 글만)
-node scripts/sync.js --all   # 전체 재번역
+node scripts/sync.js   # 모드: since-last (최근 미번??글�?
+node scripts/sync.js --all   # ?�체 ?�번??
 ```
 
-## 환경변수
+## ?�경변??
 
 `.env.local`:
 
