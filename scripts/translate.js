@@ -60,8 +60,8 @@ const SYSTEM_PROMPT = `당신은 IT/AI 분야의 전문적인 일본어->한국�
 8. 원문에 뉴스레터/구독/브랜드(ML_Bear Times 등) 광고성 문구가 있다면 해당 문구는 번역하지 말고 생략한다.`;
 
 async function translate(text) {
-  // Chunk overlong text (≈ Gemini-2.0-flash input 1M tokens but output is 8K, so guard by length).
-  const MAX = 14000; // chars per chunk, ~ safe
+  // Chunk overlong text — smaller chunks to stay under Groq TPM limit
+  const MAX = 8000; // chars per chunk, ~2000 tokens input
   if (text.length <= MAX) return await callTranslate(text);
 
   // Split by paragraphs to preserve structure.
@@ -83,6 +83,10 @@ async function translate(text) {
   for (let i = 0; i < chunks.length; i++) {
     process.stderr.write(`  chunk ${i + 1}/${chunks.length} (${chunks[i].length} chars)\n`);
     out.push(await callTranslate(chunks[i]));
+    // Delay between chunks to respect Groq TPM limit (12k/min)
+    if (i < chunks.length - 1) {
+      await new Promise(r => setTimeout(r, 45000)); // 45 sec
+    }
   }
   return out.join('\n\n');
 }
@@ -96,7 +100,7 @@ async function callTranslate(text) {
       { role: 'user', content: text }
     ],
     temperature: 0.2,
-    max_tokens: 8192
+    max_tokens: 4096
   };
   const MAX_RETRIES = 6;
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
@@ -207,8 +211,8 @@ async function main() {
     fs.writeFileSync(filePath, fm + '\n\n' + stripYAMLBlock(krBody) + '\n');
     done[slug] = { translated: !!API_KEY, at: new Date().toISOString(), file: filePath };
     saveJSON(FRONT_FILE, done);
-    // throttle for free tier
-    await new Promise(r => setTimeout(r, 1500));
+    // throttle for Groq free tier (12k TPM) — wait 90 sec between articles
+    await new Promise(r => setTimeout(r, 90000));
   }
   process.stderr.write(`[done] ${Object.keys(done).filter(s => done[s].translated).length}/${slugs.length} translated\n`);
 }
