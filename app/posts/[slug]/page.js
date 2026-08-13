@@ -32,11 +32,6 @@ export default function PostPage({ params }) {
           <img className="post-article-image" src={post.data.image} alt={post.data.title} />
         )}
         <Markdown>{post.content}</Markdown>
-        {post.data.source_url && (
-          <p className="post-source">
-            출처: <a href={post.data.source_url} target="_blank" rel="noopener noreferrer">원문 보기</a>
-          </p>
-        )}
       </article>
     </div>
   );

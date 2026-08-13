@@ -162,7 +162,9 @@ async function main() {
   const done = loadJSON(FRONT_FILE, {});
   const argv = process.argv.slice(2);
   const all = argv.includes('--force');
+  const fromToday = argv.includes('--from-today');
   const slugArg = argv.indexOf('--slug');
+  const todayStr = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
   const slugs = Object.keys(articles);
   let i = 0;
@@ -170,6 +172,10 @@ async function main() {
     i++;
     const a = articles[slug];
     if (!a || !a.body) continue;
+    if (fromToday && a.date && a.date < todayStr) {
+      process.stderr.write(`[${i}/${slugs.length}] ${slug} (skip, before today)\n`);
+      continue;
+    }
     if (slugArg >= 0 && argv[slugArg + 1] !== slug) continue;
     if (!all && done[slug]?.translated) {
       process.stderr.write(`[${i}/${slugs.length}] ${slug} (skip, already translated)\n`);
