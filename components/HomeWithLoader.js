@@ -1,36 +1,43 @@
 ﻿'use client';
 
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import HexScene from './HexScene';
 
+function PostCard({ post }) {
+  return (
+    <article className="post-card">
+      {post.data.image && (
+        <Link href={`/posts/${post.slug}`} className="post-card-thumb">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={post.data.image} alt={post.data.title} loading="lazy" />
+        </Link>
+      )}
+      <div className="post-card-body">
+        <time className="post-date" dateTime={post.data.date}>{post.data.date}</time>
+        <h2 className="post-title">
+          <Link href={`/posts/${post.slug}`}>{post.data.title}</Link>
+        </h2>
+        {post.excerpt && <p className="post-excerpt">{post.excerpt}</p>}
+        <Link className="post-more" href={`/posts/${post.slug}`}>읽기 →</Link>
+      </div>
+    </article>
+  );
+}
+
 export default function HomeWithLoader({ posts }) {
-  // Show loader only if there are no posts (should not happen with current data)
-  const [showLoader, setShowLoader] = useState(!(posts && posts.length > 0));
-
-  // Optionally hide loader after a short delay to avoid flash if posts become available later
-  useEffect(() => {
-    if (showLoader && posts && posts.length > 0) {
-      const id = setTimeout(() => setShowLoader(false), 100);
-      return () => clearTimeout(id);
-    }
-  }, [showLoader, posts]);
-
-  if (showLoader) {
+  const list = Array.isArray(posts) ? posts : [];
+  if (list.length === 0) {
     return <HexScene />;
   }
-
   return (
-    <div>
-      <h1>Korean AI News</h1>
-      <div>
-        {posts.map((post) => (
-          <div key={post.slug} style={{ borderBottom: '1px solid #eee', padding: '16px 0' }}>
-            <h2>{post.data.title}</h2>
-            <p>{post.data.date}</p>
-            <p>{post.content.slice(0, 200)}...</p>
-          </div>
-        ))}
-      </div>
+    <div className="page">
+      <header className="site-header">
+        <h1>AI 뉴스 번역 모음</h1>
+        <p>매일 일본 AI 뉴스를 모아 놓은 페이지입니다.</p>
+      </header>
+      <main className="post-list">
+        {list.map((post) => <PostCard key={post.slug} post={post} />)}
+      </main>
     </div>
   );
 }
