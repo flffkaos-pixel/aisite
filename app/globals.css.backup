@@ -1,0 +1,157 @@
+:root {
+  --bg-from: #eef1f8;
+  --bg-to: #dde2ed;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-from);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== loader ===== */
+.loader-root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(ellipse at center, var(--bg-from) 0%, var(--bg-to) 100%);
+}
+
+.scene {
+  position: relative;
+}
+
+/* each hex wrapper is absolutely positioned at scene center, then translated */
+.hex-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 141px;
+  height: 155px;
+}
+
+.hex-tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hex-icon-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hex-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  will-change: opacity, transform;
+  pointer-events: none;
+  width: 32px;
+  height: 32px;
+}
+
+.hex-icon-current { animation: none; }
+.hex-icon-in   { animation: hexFadeInRight 0.5s ease-out forwards; }
+.hex-icon-out  { animation: hexFadeOutLeft 0.5s ease-in forwards; }
+
+/* glow behind center */
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(71, 112, 189, 0.70);
+  filter: blur(37px);
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* loading block */
+.loading-block {
+  position: absolute;
+  bottom: calc(48px + 7vh);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: min(360px, 70vw);
+  z-index: 20;
+}
+
+.loading-text {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgba(40, 50, 80, 0.45);
+  background: linear-gradient(
+    115deg,
+    rgba(40, 50, 80, 0.45) 0%,
+    rgba(40, 50, 80, 0.45) 40%,
+    rgba(71, 112, 189, 1) 50%,
+    rgba(40, 50, 80, 0.45) 60%,
+    rgba(40, 50, 80, 0.45) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: loadingShimmer 2.4s ease-in infinite;
+}
+
+.progress-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(40, 50, 80, 0.12);
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: rgba(71, 112, 189, 0.95);
+  width: 0%;
+}
+
+/* keyframes */
+@keyframes hexFadeInRight {
+  0%   { opacity: 0; transform: translate(-50%, -50%) translateX(20px); }
+  100% { opacity: 1; transform: translate(-50%, -50%); }
+}
+@keyframes hexFadeOutLeft {
+  0%   { opacity: 1; transform: translate(-50%, -50%); }
+  100% { opacity: 0; transform: translate(-50%, -50%) translateX(-20px); }
+}
+@keyframes loadingShimmer {
+  0%   { background-position: 250% 0; }
+  100% { background-position: -150% 0; }
+}

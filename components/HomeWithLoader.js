@@ -7,9 +7,14 @@ export default function HomeWithLoader({ posts }) {
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
-    const id = setTimeout(() => setShowLoader(false), 2500);
-    return () => clearTimeout(id);
-  }, []);
+    // Hide loader when posts are available or after a short delay
+    if (posts && posts.length > 0) {
+      setShowLoader(false);
+    } else {
+      const id = setTimeout(() => setShowLoader(false), 2500);
+      return () => clearTimeout(id);
+    };
+  }, [posts]);
 
   if (showLoader) {
     return <HexScene />;

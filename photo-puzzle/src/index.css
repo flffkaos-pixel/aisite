@@ -1,0 +1,113 @@
+/* index.css - 글로벌 스타일 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f3f5;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-muted: #868e96;
+  --accent: #4c6ef5;
+  --accent-hover: #3b5bdb;
+  --accent-light: #e7ebfd;
+  --success: #40c057;
+  --success-light: #d3f9d8;
+  --warning: #fab005;
+  --danger: #fa5252;
+  --danger-light: #ffe3e3;
+  --border: #dee2e6;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --transition: 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1a1b1e;
+    --bg-secondary: #242529;
+    --bg-tertiary: #2d2e33;
+    --text-primary: #f1f3f5;
+    --text-secondary: #ced4da;
+    --text-muted: #868e96;
+    --accent: #748ffc;
+    --accent-hover: #8ea4fd;
+    --accent-light: #2c335a;
+    --success: #51cf66;
+    --success-light: #1e3a24;
+    --warning: #fcc419;
+    --danger: #ff6b6b;
+    --danger-light: #3a1e1e;
+    --border: #373a40;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow: 0 4px 12px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+  }
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+input, select {
+  font-family: inherit;
+}
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-hover); }
+
+/* 스크롤바 */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-tertiary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* 선택 */
+::selection { background: var(--accent-light); color: var(--accent); }
+
+/* 포커스 */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* 유틸리티 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
