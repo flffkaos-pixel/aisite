@@ -1,104 +1,104 @@
 {
   "20260811_00_morning": {
     "translated": false,
-    "at": "2026-08-13T04:13:26.913Z",
+    "at": "2026-08-13T06:03:19.943Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260811_00_morning.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8437, Requested 11922. Please try again in 41.795s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260812_00_morning": {
     "translated": false,
-    "at": "2026-08-13T04:13:26.996Z",
+    "at": "2026-08-13T06:05:22.324Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260812_00_morning.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8420, Requested 8480. Please try again in 24.5s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260811_01_evening": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.052Z",
+    "at": "2026-08-13T06:08:33.936Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260811_01_evening.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8409, Requested 8481. Please try again in 24.45s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260810_01_evening": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.108Z",
+    "at": "2026-08-13T06:10:36.342Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260810_01_evening.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8397, Requested 8481. Please try again in 24.389999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260810_00_morning": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.163Z",
+    "at": "2026-08-13T06:13:21.078Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260810_00_morning.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8386, Requested 8480. Please try again in 24.33s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260809_00_morning": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.219Z",
+    "at": "2026-08-13T06:15:23.462Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260809_00_morning.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8375, Requested 8480. Please try again in 24.275s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260808_00_morning": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.276Z",
+    "at": "2026-08-13T06:17:25.958Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260808_00_morning.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8364, Requested 8480. Please try again in 24.22s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260807_01_evening": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.339Z",
+    "at": "2026-08-13T06:19:28.385Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260807_01_evening.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8351, Requested 8481. Please try again in 24.16s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260807_00_morning": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.395Z",
+    "at": "2026-08-13T06:21:30.779Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260807_00_morning.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8340, Requested 8480. Please try again in 24.1s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260806_01_evening": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.450Z",
+    "at": "2026-08-13T06:23:33.280Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260806_01_evening.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8329, Requested 8481. Please try again in 24.05s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260806_00_morning": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.505Z",
+    "at": "2026-08-13T06:25:35.622Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260806_00_morning.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8318, Requested 8480. Please try again in 23.99s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260805_01_evening": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.561Z",
+    "at": "2026-08-13T06:27:38.038Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260805_01_evening.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8307, Requested 8481. Please try again in 23.94s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260805_00_morning": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.625Z",
+    "at": "2026-08-13T06:29:40.447Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260805_00_morning.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8295, Requested 8480. Please try again in 23.875s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260804_01_evening": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.680Z",
+    "at": "2026-08-13T06:31:42.790Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260804_01_evening.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8283, Requested 8481. Please try again in 23.82s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260804_00_morning": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.736Z",
+    "at": "2026-08-13T06:33:45.286Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260804_00_morning.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8272, Requested 8480. Please try again in 23.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260813_00_morning": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.790Z",
+    "at": "2026-08-13T06:35:47.782Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260813_00_morning.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8261, Requested 8480. Please try again in 23.705s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   },
   "20260812_01_evening": {
     "translated": false,
-    "at": "2026-08-13T04:13:27.848Z",
+    "at": "2026-08-13T06:37:50.276Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260812_01_evening.md",
-    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 8250, Requested 8481. Please try again in 23.655s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
+    "error": "translate failed after 6 retries (rate limited)"
   }
 }
