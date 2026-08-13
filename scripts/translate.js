@@ -110,7 +110,7 @@ async function callTranslate(text) {
     });
     if (res.ok) {
       const data = await res.json();
-      const out = data?.choices?0]?.message?.content || '';
+      const out = data?.choices?.[0]?.message?.content || '';
       return out.trim();
     }
     const t = await res.text();
