@@ -40,67 +40,68 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260807_01_evening.md"
   },
   "20260807_00_morning": {
-    "translated": false,
-    "at": "2026-08-13T23:44:06.527Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260807_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-14T23:10:08.435Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260807_00_morning.md"
   },
   "20260806_01_evening": {
-    "translated": false,
-    "at": "2026-08-13T23:46:08.898Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260806_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-14T23:11:48.357Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260806_01_evening.md"
   },
   "20260806_00_morning": {
-    "translated": false,
-    "at": "2026-08-13T23:48:11.367Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260806_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-14T23:13:32.570Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260806_00_morning.md"
   },
   "20260805_01_evening": {
-    "translated": false,
-    "at": "2026-08-13T23:50:13.800Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260805_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-14T23:15:23.721Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260805_01_evening.md"
   },
   "20260805_00_morning": {
-    "translated": false,
-    "at": "2026-08-13T23:52:16.277Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260805_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-14T23:17:06.992Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260805_00_morning.md"
   },
   "20260804_01_evening": {
-    "translated": false,
-    "at": "2026-08-13T23:54:18.641Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260804_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-14T23:18:45.904Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260804_01_evening.md"
   },
   "20260804_00_morning": {
-    "translated": false,
-    "at": "2026-08-13T23:56:21.013Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260804_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-14T23:20:30.800Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260804_00_morning.md"
   },
   "20260813_00_morning": {
-    "translated": false,
-    "at": "2026-08-13T23:58:23.399Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260813_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-14T23:22:11.613Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260813_00_morning.md"
   },
   "20260812_01_evening": {
-    "translated": false,
-    "at": "2026-08-14T00:00:25.767Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260812_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-14T23:23:49.767Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260812_01_evening.md"
   },
   "20260814_00_morning": {
-    "translated": false,
-    "error": "translate failed after 6 retries (rate limited)",
-    "at": "2026-08-14T00:02:28.583Z"
+    "translated": true,
+    "at": "2026-08-14T23:25:31.757Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260814_00_morning.md"
   },
   "20260813_01_evening": {
     "translated": false,
     "error": "translate failed after 6 retries (rate limited)",
-    "at": "2026-08-14T00:04:30.965Z"
+    "at": "2026-08-14T23:29:44.457Z"
+  },
+  "20260815_00_morning": {
+    "translated": false,
+    "error": "translate failed after 6 retries (rate limited)",
+    "at": "2026-08-14T23:31:47.183Z"
+  },
+  "20260814_01_evening": {
+    "translated": false,
+    "error": "translate failed after 6 retries (rate limited)",
+    "at": "2026-08-14T23:33:51.847Z"
   }
 }
