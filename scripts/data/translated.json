@@ -90,18 +90,23 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260814_00_morning.md"
   },
   "20260813_01_evening": {
-    "translated": false,
-    "error": "translate failed after 6 retries (rate limited)",
-    "at": "2026-08-14T23:29:44.457Z"
+    "translated": true,
+    "at": "2026-08-15T23:08:33.806Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260813_01_evening.md"
   },
   "20260815_00_morning": {
-    "translated": false,
-    "error": "translate failed after 6 retries (rate limited)",
-    "at": "2026-08-14T23:31:47.183Z"
+    "translated": true,
+    "at": "2026-08-15T23:10:11.425Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260815_00_morning.md"
   },
   "20260814_01_evening": {
-    "translated": false,
-    "error": "translate failed after 6 retries (rate limited)",
-    "at": "2026-08-14T23:33:51.847Z"
+    "translated": true,
+    "at": "2026-08-15T23:12:03.859Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260814_01_evening.md"
+  },
+  "20260816_00_morning": {
+    "translated": true,
+    "at": "2026-08-15T23:13:54.286Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260816_00_morning.md"
   }
 }
