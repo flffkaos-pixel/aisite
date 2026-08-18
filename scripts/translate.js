@@ -101,7 +101,7 @@ async function callTranslate(text) {
       { role: 'user', content: text }
     ],
     temperature: 0.2,
-    max_tokens: 4096
+    max_tokens: 8192
   };
   let lastErr = null;
   for (const model of MODELS) {
@@ -122,6 +122,13 @@ async function callTranslate(text) {
 
 async function callModel(model, body) {
   const payload = { ...body, model };
+  // Reasonin형 모델: reasoning을 최소화해서 content에 실제 번역이 남도록.
+  if (/gpt-oss/i.test(model)) {
+    payload.reasoning_effort = 'low';
+    payload.include_reasoning = false;
+  } else if (/qwen/i.test(model)) {
+    payload.reasoning_effort = 'none';
+  }
   const MAX_RETRIES = 6;
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     const res = await fetch(API_URL, {
@@ -135,6 +142,11 @@ async function callModel(model, body) {
     if (res.ok) {
       const data = await res.json();
       const out = data?.choices?.[0]?.message?.content || '';
+      if (!out.trim()) {
+        process.stderr.write(`  empty response (attempt ${attempt}/${MAX_RETRIES})\n`);
+        await new Promise(r => setTimeout(r, Math.min(30, 2 ** attempt) * 1000));
+        continue;
+      }
       return out.trim();
     }
     const t = await res.text();
