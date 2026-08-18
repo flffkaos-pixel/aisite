@@ -62,8 +62,8 @@ const SYSTEM_PROMPT = `당신은 IT/AI 분야의 전문적인 일본어->한국�
 9. 출력물에는 일본어가 전혀 남아 있으면 안 된다. (참고: 激化→치열해짐, 話題→화제, まとめ→요약, 行くぞ→가자, 優れた→뛰어난, 凌駕→능가, 操作→조작, 構築→구축, 離れる→벗어나다 등 일본어 어휘/문법/표현은 반드시 자연스러운 한국어로 옮긴다.) 인용문/트윗 원문도 한국어로 번역하되, 한국어 번역문 뒤에 "(번역)" 표기를 유지한다. 미번역 일본어 문장 하나도 남기지 않는다.`;
 
 async function translate(text) {
-  // Chunk overlong text — smaller chunks to stay under Groq TPM limit
-  const MAX = 8000; // chars per chunk, ~2000 tokens input
+  // Chunk overlong text — smaller chunks to stay under Groq TPM limit (8000/min)
+  const MAX = 3000; // chars per chunk (일본어 ≈ 1.5 tok/char; 본문+시스템 프롬프트 < 8000 TPM 유지)
   if (text.length <= MAX) return await callTranslate(text);
 
   // Split by paragraphs to preserve structure.
@@ -101,7 +101,7 @@ async function callTranslate(text) {
       { role: 'user', content: text }
     ],
     temperature: 0.2,
-    max_tokens: 8192
+    max_tokens: 4096
   };
   let lastErr = null;
   for (const model of MODELS) {
