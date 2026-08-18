@@ -27,7 +27,8 @@ const FRONT_FILE = path.join(ROOT, 'scripts', 'data', 'translated.json');
 
 const API_URL = process.env.LLM_API_URL || 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions';
 const API_KEY = process.env.LLM_API_KEY || process.env.GEMINI_API_KEY || '';
-const MODEL = process.env.LLM_MODEL || 'gemini-2.0-flash';
+// 콤마로 구분된 폴백 체인 지원: 앞 모델이 제거/접근불가면 다음으로 넘어감.
+const MODELS = (process.env.LLM_MODEL || 'gemini-2.0-flash').split(',').map(s => s.trim()).filter(Boolean);
 
 function ensureDir(p) {
   if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
@@ -57,7 +58,8 @@ const SYSTEM_PROMPT = `당신은 IT/AI 분야의 전문적인 일본어->한국�
 5. 트위터/X 인용문 뒤 "(번역)" 표기도 한국어로 "(번역)"으로 유지.
 6. 부자연스러운 기계번역 톤을 피하고, 자연스러운 한국어 문장으로 다듬되 의미를 왜곡하지 않는다.
 7. 출력은 번역된 Markdown 본문만. 설명, 주석, 사족 금지.
-8. 원문에 뉴스레터/구독/브랜드(ML_Bear Times 등) 광고성 문구가 있다면 해당 문구는 번역하지 말고 생략한다.`;
+8. 원문에 뉴스레터/구독/브랜드(ML_Bear Times 등) 광고성 문구가 있다면 해당 문구는 번역하지 말고 생략한다.
+9. 출력물에는 일본어가 전혀 남아 있으면 안 된다. (참고: 激化→치열해짐, 話題→화제, まとめ→요약, 行くぞ→가자, 優れた→뛰어난, 凌駕→능가, 操作→조작, 構築→구축, 離れる→벗어나다 등 일본어 어휘/문법/표현은 반드시 자연스러운 한국어로 옮긴다.) 인용문/트윗 원문도 한국어로 번역하되, 한국어 번역문 뒤에 "(번역)" 표기를 유지한다. 미번역 일본어 문장 하나도 남기지 않는다.`;
 
 async function translate(text) {
   // Chunk overlong text — smaller chunks to stay under Groq TPM limit
@@ -94,7 +96,6 @@ async function translate(text) {
 async function callTranslate(text) {
   if (!API_KEY) throw new Error('LLM_API_KEY not set');
   const body = {
-    model: MODEL,
     messages: [
       { role: 'system', content: SYSTEM_PROMPT },
       { role: 'user', content: text }
@@ -102,6 +103,25 @@ async function callTranslate(text) {
     temperature: 0.2,
     max_tokens: 4096
   };
+  let lastErr = null;
+  for (const model of MODELS) {
+    try {
+      return await callModel(model, body);
+    } catch (e) {
+      lastErr = e;
+      // モデル不存在/アクセス権なし → 次のモデルへフォールバック
+      if (/model_not_found|does not exist|do not have access/i.test(e.message)) {
+        process.stderr.write(`  model '${model}' unavailable, trying next\n`);
+        continue;
+      }
+      throw e;
+    }
+  }
+  throw lastErr || new Error('translate failed: no usable model');
+}
+
+async function callModel(model, body) {
+  const payload = { ...body, model };
   const MAX_RETRIES = 6;
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     const res = await fetch(API_URL, {
@@ -110,7 +130,7 @@ async function callTranslate(text) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`
       },
-      body: JSON.stringify(body)
+      body: JSON.stringify(payload)
     });
     if (res.ok) {
       const data = await res.json();
