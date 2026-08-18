@@ -46,9 +46,9 @@
   },
   "20260806_01_evening": {
     "translated": false,
-    "at": "2026-08-18T03:30:19.099Z",
+    "at": "2026-08-18T03:59:13.201Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260806_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260806_00_morning": {
     "translated": true,
@@ -57,27 +57,27 @@
   },
   "20260805_01_evening": {
     "translated": false,
-    "at": "2026-08-18T03:32:35.867Z",
+    "at": "2026-08-18T04:01:15.685Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260805_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260805_00_morning": {
     "translated": false,
-    "at": "2026-08-18T03:34:52.717Z",
+    "at": "2026-08-18T04:03:18.195Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260805_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260804_01_evening": {
     "translated": false,
-    "at": "2026-08-18T03:36:57.301Z",
+    "at": "2026-08-18T04:05:20.686Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260804_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260804_00_morning": {
     "translated": false,
-    "at": "2026-08-18T03:38:59.835Z",
+    "at": "2026-08-18T04:07:23.159Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260804_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260813_00_morning": {
     "translated": false,
@@ -87,39 +87,39 @@
   },
   "20260812_01_evening": {
     "translated": false,
-    "at": "2026-08-18T03:41:02.151Z",
+    "at": "2026-08-18T04:09:25.610Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260812_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260814_00_morning": {
     "translated": false,
-    "at": "2026-08-18T03:43:06.778Z",
+    "at": "2026-08-18T04:11:28.067Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260814_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260813_01_evening": {
     "translated": false,
-    "at": "2026-08-18T03:45:09.131Z",
+    "at": "2026-08-18T04:13:30.706Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260813_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260815_00_morning": {
     "translated": false,
-    "at": "2026-08-18T03:48:13.947Z",
+    "at": "2026-08-18T04:15:33.362Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260815_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260814_01_evening": {
     "translated": false,
-    "at": "2026-08-18T03:51:18.818Z",
+    "at": "2026-08-18T04:17:36.346Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260814_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260816_00_morning": {
     "translated": false,
-    "at": "2026-08-18T03:53:23.405Z",
+    "at": "2026-08-18T04:19:38.795Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260816_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "HTTP 404: {\"error\":{\"message\":\"The model `meta-llama/llama-4-scout-17b-16e-instruct` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
   },
   "20260817_00_morning": {
     "translated": false,
