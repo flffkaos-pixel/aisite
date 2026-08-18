@@ -22,6 +22,10 @@ on:
         description: '특정 slug만 번역 (예: 20260813_00_morning)'
         required: false
         default: ''
+      dirty:
+        description: '일본어 잔재가 남은 글만 재번역'
+        required: false
+        default: 'false'
 
 permissions:
   contents: write
@@ -59,7 +63,7 @@ jobs:
           SCRAPE_LIMIT: ${{ github.event.inputs.limit }}
         run: |
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
-            node scripts/translate.js --force${{ github.event.inputs.from_today == 'true' && ' --from-today' || '' }}${{ github.event.inputs.slug != '' && format(' --slug {0}', github.event.inputs.slug) || '' }}
+            node scripts/translate.js --force${{ github.event.inputs.from_today == 'true' && ' --from-today' || '' }}${{ github.event.inputs.slug != '' && format(' --slug {0}', github.event.inputs.slug) || '' }}${{ github.event.inputs.dirty == 'true' && ' --dirty' || '' }}
           else
             node scripts/sync.js
           fi

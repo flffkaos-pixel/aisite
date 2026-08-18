@@ -61,9 +61,19 @@ const SYSTEM_PROMPT = `당신은 IT/AI 분야의 전문적인 일본어->한국�
 8. 원문에 뉴스레터/구독/브랜드(ML_Bear Times 등) 광고성 문구가 있다면 해당 문구는 번역하지 말고 생략한다.
 9. 출력물에는 일본어가 전혀 남아 있으면 안 된다. (참고: 激化→치열해짐, 話題→화제, まとめ→요약, 行くぞ→가자, 優れた→뛰어난, 凌駕→능가, 操作→조작, 構築→구축, 離れる→벗어나다 등 일본어 어휘/문법/표현은 반드시 자연스러운 한국어로 옮긴다.) 인용문/트윗 원문도 한국어로 번역하되, 한국어 번역문 뒤에 "(번역)" 표기를 유지한다. 미번역 일본어 문장 하나도 남기지 않는다.`;
 
+// 일본어 잔재 판정: 히라가나/가타카나/한자(한국어 문장에는 거의 안 씀) 문자 개수.
+function countJp(s) {
+  const m = (s || '').match(/[ぁ-んァ-ン一-龠]/g);
+  return m ? m.length : 0;
+}
+// 번역 품질 검증: 잔재가 너무 많으면 실패로 처리해 재시도/마킹.
+function isDirty(s) {
+  return countJp(s) > 40;
+}
+
 async function translate(text) {
   // Chunk overlong text — smaller chunks to stay under Groq TPM limit (8000/min)
-  const MAX = 3000; // chars per chunk (일본어 ≈ 1.5 tok/char; 본문+시스템 프롬프트 < 8000 TPM 유지)
+  const MAX = 2500; // chars per chunk (일본어 ≈ 1.5 tok/char; 본문+시스템 프롬프트 < 8000 TPM 유지)
   if (text.length <= MAX) return await callTranslate(text);
 
   // Split by paragraphs to preserve structure.
@@ -90,7 +100,11 @@ async function translate(text) {
       await new Promise(r => setTimeout(r, 45000)); // 45 sec
     }
   }
-  return out.join('\n\n');
+  const joined = out.join('\n\n');
+  if (isDirty(joined)) {
+    throw new Error(`output still contains japanese (${countJp(joined)} chars)`);
+  }
+  return joined;
 }
 
 async function callTranslate(text) {
@@ -126,6 +140,8 @@ async function callModel(model, body) {
   if (/gpt-oss/i.test(model)) {
     payload.reasoning_effort = 'low';
     payload.include_reasoning = false;
+    // gpt-oss-120b free tier TPM 8000 → 출력 상한을 줄여 429/413 회피
+    payload.max_tokens = 3000;
   } else if (/qwen/i.test(model)) {
     payload.reasoning_effort = 'none';
   }
@@ -199,6 +215,7 @@ async function main() {
   const argv = process.argv.slice(2);
   const all = argv.includes('--force');
   const fromToday = argv.includes('--from-today');
+  const dirtyOnly = argv.includes('--dirty');
   const slugArg = argv.indexOf('--slug');
   const todayStr = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
@@ -216,6 +233,16 @@ async function main() {
     if (!all && done[slug]?.translated) {
       process.stderr.write(`[${i}/${slugs.length}] ${slug} (skip, already translated)\n`);
       continue;
+    }
+    if (dirtyOnly) {
+      const filePath = path.join(POSTS_DIR, `${slug}.md`);
+      if (fs.existsSync(filePath)) {
+        const existing = fs.readFileSync(filePath, 'utf8').replace(/^---[\s\S]*?---\s*/, '');
+        if (!isDirty(existing)) {
+          process.stderr.write(`[${i}/${slugs.length}] ${slug} (skip, clean)\n`);
+          continue;
+        }
+      }
     }
     process.stderr.write(`[${i}/${slugs.length}] ${slug} translate(${a.body.length} chars)\n`);
     let krTitle = a.title;
