@@ -123,9 +123,13 @@ async function callTranslate(text) {
       return await callModel(model, body);
     } catch (e) {
       lastErr = e;
-      // モデル不存在/アクセス権なし → 次のモデルへフォールバック
+      // モデル不存在/アクセス権なし/継続的な rate limit → 次のモデルへフォールバック
       if (/model_not_found|does not exist|do not have access/i.test(e.message)) {
         process.stderr.write(`  model '${model}' unavailable, trying next\n`);
+        continue;
+      }
+      if (/rate limited/i.test(e.message)) {
+        process.stderr.write(`  model '${model}' rate limited, trying next\n`);
         continue;
       }
       throw e;
