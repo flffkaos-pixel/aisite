@@ -115,13 +115,13 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260817_00_morning.md"
   },
   "20260818_00_morning": {
-    "translated": false,
-    "error": "HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n",
-    "at": "2026-08-17T23:10:16.862Z"
+    "translated": true,
+    "at": "2026-08-18T01:12:17.534Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260818_00_morning.md"
   },
   "20260817_01_evening": {
-    "translated": false,
-    "error": "HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n",
-    "at": "2026-08-17T23:10:17.074Z"
+    "translated": true,
+    "at": "2026-08-18T01:15:26.212Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260817_01_evening.md"
   }
 }
