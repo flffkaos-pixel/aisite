@@ -68,7 +68,7 @@ function countJp(s) {
 }
 // 번역 품질 검증: 잔재가 너무 많으면 실패로 처리해 재시도/마킹.
 function isDirty(s) {
-  return countJp(s) > 40;
+  return countJp(s) > 5;
 }
 
 async function translate(text) {
