@@ -26,12 +26,12 @@
   },
   "20260809_00_morning": {
     "translated": true,
-    "at": "2026-08-18T02:39:18.723Z",
+    "at": "2026-08-18T05:07:23.633Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260809_00_morning.md"
   },
   "20260808_00_morning": {
     "translated": true,
-    "at": "2026-08-18T02:41:42.881Z",
+    "at": "2026-08-18T05:09:42.693Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260808_00_morning.md"
   },
   "20260807_01_evening": {
@@ -51,7 +51,7 @@
   },
   "20260806_00_morning": {
     "translated": true,
-    "at": "2026-08-18T02:52:43.771Z",
+    "at": "2026-08-18T05:12:48.057Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260806_00_morning.md"
   },
   "20260805_01_evening": {
@@ -86,9 +86,10 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260812_01_evening.md"
   },
   "20260814_00_morning": {
-    "translated": true,
-    "at": "2026-08-18T04:45:14.203Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260814_00_morning.md"
+    "translated": false,
+    "at": "2026-08-18T05:15:56.969Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260814_00_morning.md",
+    "error": "output still contains japanese (60 chars)"
   },
   "20260813_01_evening": {
     "translated": true,
@@ -101,9 +102,10 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260815_00_morning.md"
   },
   "20260814_01_evening": {
-    "translated": true,
-    "at": "2026-08-18T04:52:56.493Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260814_01_evening.md"
+    "translated": false,
+    "at": "2026-08-18T05:17:52.996Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260814_01_evening.md",
+    "error": "output still contains japanese (7 chars)"
   },
   "20260816_00_morning": {
     "translated": true,
@@ -111,10 +113,9 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260816_00_morning.md"
   },
   "20260817_00_morning": {
-    "translated": false,
-    "at": "2026-08-18T03:20:26.907Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260817_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-18T05:19:32.709Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260817_00_morning.md"
   },
   "20260818_00_morning": {
     "translated": false,
