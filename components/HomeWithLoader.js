@@ -33,7 +33,7 @@ export default function HomeWithLoader({ posts }) {
     <div className="page">
       <header className="site-header">
         <h1>AI 뉴스 번역 모음</h1>
-        <p>매일 일본 AI 뉴스를 모아 놓은 페이지입니다.</p>
+        <p>매일 AI 뉴스를 모아 놓은 페이지입니다.</p>
       </header>
       <main className="post-list">
         {list.map((post) => <PostCard key={post.slug} post={post} />)}
