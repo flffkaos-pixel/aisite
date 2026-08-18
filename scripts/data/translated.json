@@ -75,9 +75,10 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260804_00_morning.md"
   },
   "20260813_00_morning": {
-    "translated": true,
-    "at": "2026-08-18T00:58:32.167Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260813_00_morning.md"
+    "translated": false,
+    "at": "2026-08-18T01:01:42.602Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260813_00_morning.md",
+    "error": "HTTP 413: {\"error\":{\"message\":\"Request too large for model `openai/gpt-oss-120b` in organization `org_01kzwm623qemma4vvt211d8ygx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8713, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n"
   },
   "20260812_01_evening": {
     "translated": true,
