@@ -76,9 +76,9 @@
   },
   "20260813_00_morning": {
     "translated": false,
-    "at": "2026-08-18T03:06:08.658Z",
+    "at": "2026-08-18T23:11:44.814Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260813_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "output still contains japanese (181 chars)"
   },
   "20260812_01_evening": {
     "translated": true,
@@ -87,9 +87,9 @@
   },
   "20260814_00_morning": {
     "translated": false,
-    "at": "2026-08-18T05:15:56.969Z",
+    "at": "2026-08-18T23:13:19.013Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260814_00_morning.md",
-    "error": "output still contains japanese (60 chars)"
+    "error": "output still contains japanese (63 chars)"
   },
   "20260813_01_evening": {
     "translated": true,
@@ -102,10 +102,9 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260815_00_morning.md"
   },
   "20260814_01_evening": {
-    "translated": false,
-    "at": "2026-08-18T05:17:52.996Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260814_01_evening.md",
-    "error": "output still contains japanese (7 chars)"
+    "translated": true,
+    "at": "2026-08-18T23:14:54.217Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260814_01_evening.md"
   },
   "20260816_00_morning": {
     "translated": true,
@@ -118,15 +117,23 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260817_00_morning.md"
   },
   "20260818_00_morning": {
-    "translated": false,
-    "at": "2026-08-18T03:22:29.498Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260818_00_morning.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "translated": true,
+    "at": "2026-08-18T23:17:13.500Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260818_00_morning.md"
   },
   "20260817_01_evening": {
+    "translated": true,
+    "at": "2026-08-18T23:20:18.102Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260817_01_evening.md"
+  },
+  "20260819_00_morning": {
+    "translated": true,
+    "at": "2026-08-18T23:23:22.334Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260819_00_morning.md"
+  },
+  "20260818_01_evening": {
     "translated": false,
-    "at": "2026-08-18T03:24:32.145Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260817_01_evening.md",
-    "error": "translate failed after 6 retries (rate limited)"
+    "error": "output still contains japanese (42 chars)",
+    "at": "2026-08-18T23:26:26.648Z"
   }
 }
