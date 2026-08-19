@@ -1,4 +1,44 @@
 {
-  "compilerOptions": {},
-  "extends": "expo/tsconfig.base"
+  "compilerOptions": {
+    "strict": false,
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "lib/**/*.ts",
+    "lib/**/*.tsx",
+    "scripts/**/*.ts",
+    "scripts/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "film-mood-rebuild",
+    "graft",
+    "photo-puzzle",
+    "poseidon-ocean",
+    "timeline-app",
+    "water-zoom-combo",
+    ".expo",
+    ".vercel",
+    ".github",
+    "content",
+    "public",
+    "scripts/jsonld-website.json"
+  ]
 }
