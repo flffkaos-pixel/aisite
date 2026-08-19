@@ -38,6 +38,14 @@ export default function HomeWithLoader({ posts }) {
       <main className="post-list">
         {list.map((post) => <PostCard key={post.slug} post={post} />)}
       </main>
+      <footer className="site-footer">
+        <nav>
+          <Link href="/privacy">개인정보 처리방침</Link>
+          <span className="mx-2">·</span>
+          <Link href="/contact">문의하기</Link>
+        </nav>
+        <p className="mt-4 text-sm">© 2026 AI 뉴스 번역 모음. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
