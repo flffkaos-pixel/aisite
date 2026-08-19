@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" fill="url(#bg)"/>
+  <text x="16" y="17.6" font-size="19.2" text-anchor="middle" dominant-baseline="middle">🎬</text>
+  <rect x="0" y="29.44" width="32" height="2.56" fill="rgba(255,255,255,0.1)"/>
+  <g fill="rgba(255,255,255,0.3)">
+    <rect x="3.84" y="29.952" width="0.64" height="1.536"/><rect x="7.68" y="29.952" width="0.64" height="1.536"/><rect x="11.52" y="29.952" width="0.64" height="1.536"/><rect x="15.36" y="29.952" width="0.64" height="1.536"/><rect x="19.2" y="29.952" width="0.64" height="1.536"/><rect x="23.04" y="29.952" width="0.64" height="1.536"/><rect x="26.88" y="29.952" width="0.64" height="1.536"/><rect x="30.72" y="29.952" width="0.64" height="1.536"/>
+  </g>
+</svg>
