@@ -1,0 +1,19 @@
+{
+  "name": "AI 뉴스 번역 모음",
+  "short_name": "AI 뉴스",
+  "description": "매일 최신 AI 뉴스를 한국어로 번역해 제공합니다.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#00d4aa",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "ko",
+  "dir": "ltr"
+}

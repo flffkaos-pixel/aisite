@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f1a"/>
+      <stop offset="50%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4aa"/>
+      <stop offset="100%" style="stop-color:#00b894"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="600" cy="315" r="120" fill="none" stroke="url(#accent)" stroke-width="3" opacity="0.3"/>
+  <text x="600" y="280" font-family="system-ui, sans-serif" font-size="96" font-weight="900" fill="url(#accent)" text-anchor="middle" dominant-baseline="middle">AI</text>
+  <text x="600" y="380" font-family="system-ui, sans-serif" font-size="32" fill="#e0e0e0" text-anchor="middle" dominant-baseline="middle">뉴스 번역 모음</text>
+  <text x="600" y="440" font-family="system-ui, sans-serif" font-size="20" fill="#888" text-anchor="middle" dominant-baseline="middle">매일 오전·오후 업데이트 · 한국어 번역</text>
+  <rect x="400" y="520" width="400" height="4" rx="2" fill="url(#accent)" opacity="0.5"/>
+</svg>

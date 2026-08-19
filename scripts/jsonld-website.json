@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AI 뉴스 번역 모음",
+  "url": "https://ai-newshub-psi.vercel.app",
+  "description": "매일 최신 AI 뉴스를 한국어로 번역해 제공합니다.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://ai-newshub-psi.vercel.app/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI 뉴스 번역 모음",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ai-newshub-psi.vercel.app/favicon.svg"
+    }
+  }
+}
