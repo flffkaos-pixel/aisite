@@ -75,10 +75,9 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260804_00_morning.md"
   },
   "20260813_00_morning": {
-    "translated": false,
-    "at": "2026-08-18T23:11:44.814Z",
-    "file": "/home/runner/work/aisite/aisite/content/posts/20260813_00_morning.md",
-    "error": "output still contains japanese (181 chars)"
+    "translated": true,
+    "at": "2026-08-21T00:42:00.649Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260813_00_morning.md"
   },
   "20260812_01_evening": {
     "translated": true,
@@ -131,8 +130,28 @@
     "file": "/home/runner/work/aisite/aisite/content/posts/20260819_00_morning.md"
   },
   "20260818_01_evening": {
-    "translated": false,
-    "error": "output still contains japanese (9 chars)",
-    "at": "2026-08-19T00:22:45.569Z"
+    "translated": true,
+    "at": "2026-08-21T00:45:08.491Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260818_01_evening.md"
+  },
+  "20260821_00_morning": {
+    "translated": true,
+    "at": "2026-08-21T00:48:13.166Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260821_00_morning.md"
+  },
+  "20260820_01_evening": {
+    "translated": true,
+    "at": "2026-08-21T00:51:17.195Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260820_01_evening.md"
+  },
+  "20260820_00_morning": {
+    "translated": true,
+    "at": "2026-08-21T00:54:23.312Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260820_00_morning.md"
+  },
+  "20260819_01_evening": {
+    "translated": true,
+    "at": "2026-08-21T00:57:28.981Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260819_01_evening.md"
   }
 }
