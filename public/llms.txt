@@ -1,0 +1,9 @@
+# AI News Hub (Korean)
+
+> Daily AI news translated into Korean, updated twice a day.
+
+Canonical URL: https://ai-newshub-psi.vercel.app
+Language: ko
+
+## Pages
+- https://ai-newshub-psi.vercel.app : AI News Hub
