@@ -217,7 +217,7 @@
   "20260828_01_evening": {
     "translated": false,
     "error": "output still contains japanese (13 chars)",
-    "at": "2026-09-03T00:48:18.057Z"
+    "at": "2026-09-03T14:47:22.789Z"
   },
   "20260829_00_morning": {
     "translated": true,
@@ -263,5 +263,10 @@
     "translated": true,
     "at": "2026-09-03T00:49:52.468Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260903_00_morning.md"
+  },
+  "20260903_01_evening": {
+    "translated": false,
+    "error": "output still contains japanese (11 chars)",
+    "at": "2026-09-03T14:48:57.722Z"
   }
 }
