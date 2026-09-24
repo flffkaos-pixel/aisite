@@ -267,7 +267,7 @@
   "20260903_01_evening": {
     "translated": false,
     "error": "output still contains japanese (8 chars)",
-    "at": "2026-09-24T00:57:50.003Z"
+    "at": "2026-09-24T15:35:29.581Z"
   },
   "20260904_00_morning": {
     "translated": true,
@@ -296,8 +296,8 @@
   },
   "20260907_01_evening": {
     "translated": false,
-    "error": "output still contains japanese (28 chars)",
-    "at": "2026-09-24T00:59:25.459Z"
+    "error": "output still contains japanese (9 chars)",
+    "at": "2026-09-24T15:37:05.425Z"
   },
   "20260908_00_morning": {
     "translated": true,
@@ -337,7 +337,7 @@
   "20260911_01_evening": {
     "translated": false,
     "error": "output still contains japanese (14 chars)",
-    "at": "2026-09-24T01:01:01.114Z"
+    "at": "2026-09-24T15:38:41.120Z"
   },
   "20260912_00_morning": {
     "translated": true,
@@ -377,7 +377,7 @@
   "20260916_01_evening": {
     "translated": false,
     "error": "output still contains japanese (15 chars)",
-    "at": "2026-09-24T01:02:38.210Z"
+    "at": "2026-09-24T15:40:17.745Z"
   },
   "20260917_00_morning": {
     "translated": true,
@@ -397,7 +397,7 @@
   "20260918_01_evening": {
     "translated": false,
     "error": "output still contains japanese (6 chars)",
-    "at": "2026-09-24T01:03:27.948Z"
+    "at": "2026-09-24T15:41:09.000Z"
   },
   "20260919_00_morning": {
     "translated": true,
@@ -443,5 +443,10 @@
     "translated": true,
     "at": "2026-09-24T01:05:03.444Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20260924_00_morning.md"
+  },
+  "20260924_01_evening": {
+    "translated": true,
+    "at": "2026-09-24T15:41:58.447Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20260924_01_evening.md"
   }
 }
