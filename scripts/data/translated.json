@@ -267,7 +267,7 @@
   "20260903_01_evening": {
     "translated": false,
     "error": "output still contains japanese (8 chars)",
-    "at": "2026-10-03T01:31:27.304Z"
+    "at": "2026-10-03T14:59:58.070Z"
   },
   "20260904_00_morning": {
     "translated": true,
@@ -296,8 +296,8 @@
   },
   "20260907_01_evening": {
     "translated": false,
-    "error": "output still contains japanese (51 chars)",
-    "at": "2026-10-03T01:33:03.440Z"
+    "error": "output still contains japanese (27 chars)",
+    "at": "2026-10-03T15:01:33.077Z"
   },
   "20260908_00_morning": {
     "translated": true,
@@ -336,8 +336,8 @@
   },
   "20260911_01_evening": {
     "translated": false,
-    "error": "output still contains japanese (14 chars)",
-    "at": "2026-10-03T01:34:37.879Z"
+    "error": "output still contains japanese (12 chars)",
+    "at": "2026-10-03T15:03:08.065Z"
   },
   "20260912_00_morning": {
     "translated": true,
@@ -377,7 +377,7 @@
   "20260916_01_evening": {
     "translated": false,
     "error": "output still contains japanese (15 chars)",
-    "at": "2026-10-03T01:36:13.934Z"
+    "at": "2026-10-03T15:04:44.272Z"
   },
   "20260917_00_morning": {
     "translated": true,
@@ -452,7 +452,7 @@
   "20260925_00_morning": {
     "translated": false,
     "error": "output still contains japanese (6 chars)",
-    "at": "2026-10-03T01:37:48.946Z"
+    "at": "2026-10-03T15:06:19.958Z"
   },
   "20260925_01_evening": {
     "translated": true,
@@ -522,6 +522,6 @@
   "20261003_00_morning": {
     "translated": false,
     "error": "output still contains japanese (99 chars)",
-    "at": "2026-10-03T01:42:28.819Z"
+    "at": "2026-10-03T15:07:55.734Z"
   }
 }
