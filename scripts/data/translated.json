@@ -267,7 +267,7 @@
   "20260903_01_evening": {
     "translated": false,
     "error": "output still contains japanese (8 chars)",
-    "at": "2026-10-06T16:59:53.076Z"
+    "at": "2026-10-07T01:53:25.567Z"
   },
   "20260904_00_morning": {
     "translated": true,
@@ -297,7 +297,7 @@
   "20260907_01_evening": {
     "translated": false,
     "error": "output still contains japanese (9 chars)",
-    "at": "2026-10-06T17:01:28.491Z"
+    "at": "2026-10-07T01:55:00.879Z"
   },
   "20260908_00_morning": {
     "translated": true,
@@ -337,7 +337,7 @@
   "20260911_01_evening": {
     "translated": false,
     "error": "output still contains japanese (12 chars)",
-    "at": "2026-10-06T17:03:03.811Z"
+    "at": "2026-10-07T01:56:35.098Z"
   },
   "20260912_00_morning": {
     "translated": true,
@@ -376,8 +376,8 @@
   },
   "20260916_01_evening": {
     "translated": false,
-    "error": "output still contains japanese (15 chars)",
-    "at": "2026-10-06T17:04:39.561Z"
+    "error": "output still contains japanese (12 chars)",
+    "at": "2026-10-07T01:58:11.021Z"
   },
   "20260917_00_morning": {
     "translated": true,
@@ -452,7 +452,7 @@
   "20260925_00_morning": {
     "translated": false,
     "error": "output still contains japanese (6 chars)",
-    "at": "2026-10-06T17:06:15.536Z"
+    "at": "2026-10-07T01:59:46.065Z"
   },
   "20260925_01_evening": {
     "translated": true,
@@ -531,8 +531,8 @@
   },
   "20261005_00_morning": {
     "translated": false,
-    "error": "output still contains japanese (710 chars)",
-    "at": "2026-10-06T17:10:58.273Z"
+    "error": "output still contains japanese (619 chars)",
+    "at": "2026-10-07T02:01:21.010Z"
   },
   "20261005_01_evening": {
     "translated": true,
@@ -548,5 +548,10 @@
     "translated": true,
     "at": "2026-10-06T17:12:33.949Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20261006_01_evening.md"
+  },
+  "20261007_00_morning": {
+    "translated": true,
+    "at": "2026-10-07T02:03:43.309Z",
+    "file": "/home/runner/work/aisite/aisite/content/posts/20261007_00_morning.md"
   }
 }
