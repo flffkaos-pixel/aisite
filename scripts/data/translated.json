@@ -267,7 +267,7 @@
   "20260903_01_evening": {
     "translated": false,
     "error": "output still contains japanese (8 chars)",
-    "at": "2026-10-14T01:28:35.524Z"
+    "at": "2026-10-14T15:37:20.322Z"
   },
   "20260904_00_morning": {
     "translated": true,
@@ -297,7 +297,7 @@
   "20260907_01_evening": {
     "translated": false,
     "error": "output still contains japanese (27 chars)",
-    "at": "2026-10-14T01:30:11.466Z"
+    "at": "2026-10-14T15:38:55.717Z"
   },
   "20260908_00_morning": {
     "translated": true,
@@ -336,8 +336,8 @@
   },
   "20260911_01_evening": {
     "translated": false,
-    "error": "output still contains japanese (14 chars)",
-    "at": "2026-10-14T01:31:46.889Z"
+    "error": "output still contains japanese (12 chars)",
+    "at": "2026-10-14T15:40:30.400Z"
   },
   "20260912_00_morning": {
     "translated": true,
@@ -377,7 +377,7 @@
   "20260916_01_evening": {
     "translated": false,
     "error": "output still contains japanese (15 chars)",
-    "at": "2026-10-14T01:33:22.890Z"
+    "at": "2026-10-14T15:42:06.596Z"
   },
   "20260917_00_morning": {
     "translated": true,
@@ -452,7 +452,7 @@
   "20260925_00_morning": {
     "translated": false,
     "error": "output still contains japanese (6 chars)",
-    "at": "2026-10-14T01:34:57.913Z"
+    "at": "2026-10-14T15:43:41.858Z"
   },
   "20260925_01_evening": {
     "translated": true,
@@ -556,8 +556,8 @@
   },
   "20261007_01_evening": {
     "translated": false,
-    "error": "output still contains japanese (57 chars)",
-    "at": "2026-10-14T01:36:32.515Z"
+    "error": "output still contains japanese (54 chars)",
+    "at": "2026-10-14T15:45:16.764Z"
   },
   "20261008_00_morning": {
     "translated": true,
@@ -577,7 +577,7 @@
   "20261009_01_evening": {
     "translated": false,
     "error": "output still contains japanese (6 chars)",
-    "at": "2026-10-14T01:38:53.845Z"
+    "at": "2026-10-14T15:47:39.876Z"
   },
   "20261010_00_morning": {
     "translated": true,
@@ -606,12 +606,17 @@
   },
   "20261013_01_evening": {
     "translated": false,
-    "error": "output still contains japanese (8 chars)",
-    "at": "2026-10-14T01:41:15.185Z"
+    "error": "output still contains japanese (12 chars)",
+    "at": "2026-10-14T15:50:01.644Z"
   },
   "20261014_00_morning": {
     "translated": true,
     "at": "2026-10-14T01:44:25.384Z",
     "file": "/home/runner/work/aisite/aisite/content/posts/20261014_00_morning.md"
+  },
+  "20261014_01_evening": {
+    "translated": false,
+    "error": "output still contains japanese (10 chars)",
+    "at": "2026-10-14T15:52:24.894Z"
   }
 }
